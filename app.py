@@ -51,10 +51,12 @@ if uploaded_files:
                 
                 # Add to list for zip download
                 # Encode back to JPEG for download
-                quality = 95
+                # Start with Max Quality (100) to try to keep size > 100KB
+                quality = 100
                 _, encoded_img = cv2.imencode('.jpg', processed_img, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
                 
                 # Output size limit check (400KB)
+                # Only reduce quality if it exceeds 400KB
                 target_size_bytes = 400 * 1024
                 while len(encoded_img) > target_size_bytes and quality > 10:
                     quality -= 5
