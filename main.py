@@ -111,12 +111,6 @@ def process_single_image(filepath):
     filename = os.path.basename(filepath)
     print(f"Processing: {filename}")
     
-    # Check input file size (FR: Limit 500KB)
-    file_size_kb = os.path.getsize(filepath) / 1024
-    if file_size_kb > 500:
-        print(f"Skipping {filename}: File size {file_size_kb:.2f}KB exceeds 500KB limit.")
-        return
-
     # Read image
     img = cv2.imread(filepath)
     if img is None:

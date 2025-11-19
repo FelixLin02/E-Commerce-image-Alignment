@@ -36,11 +36,6 @@ if uploaded_files:
     cols = st.columns(3)
     
     for idx, uploaded_file in enumerate(uploaded_files):
-        # Check input size (500KB limit)
-        if uploaded_file.size > 500 * 1024:
-            st.error(f"Skipping {uploaded_file.name}: File size {uploaded_file.size/1024:.2f}KB exceeds 500KB limit.")
-            continue
-
         # Read file as bytes
         file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
         img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
