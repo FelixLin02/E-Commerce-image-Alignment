@@ -65,7 +65,7 @@ if uploaded_files:
                 # Ensure filename ends with .jpg
                 original_name = uploaded_file.name
                 name_no_ext = os.path.splitext(original_name)[0]
-                new_filename = f"{name_no_ext}.jpg"
+                new_filename = f"{name_no_ext}_1000x1000.jpg"
                 
                 processed_images.append((new_filename, encoded_img.tobytes()))
                 

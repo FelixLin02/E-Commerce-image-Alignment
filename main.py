@@ -125,7 +125,7 @@ def process_single_image(filepath):
     # FR4.3 Output Format
     # Ensure output is always JPG
     filename_no_ext = os.path.splitext(filename)[0]
-    output_filename = f"{filename_no_ext}.jpg"
+    output_filename = f"{filename_no_ext}_1000x1000.jpg"
     output_path = os.path.join(OUTPUT_DIR, output_filename)
     
     # Save with maximum quality first to maintain file size
