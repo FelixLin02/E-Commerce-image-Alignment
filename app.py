@@ -54,8 +54,8 @@ if uploaded_files:
                 quality = 95
                 _, encoded_img = cv2.imencode('.jpg', processed_img, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
                 
-                # Output size limit check (200KB)
-                target_size_bytes = 200 * 1024
+                # Output size limit check (400KB)
+                target_size_bytes = 400 * 1024
                 while len(encoded_img) > target_size_bytes and quality > 10:
                     quality -= 5
                     _, encoded_img = cv2.imencode('.jpg', processed_img, [int(cv2.IMWRITE_JPEG_QUALITY), quality])

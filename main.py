@@ -132,8 +132,8 @@ def process_single_image(filepath):
     quality = 95
     cv2.imwrite(output_path, transformed_img, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
     
-    # Check output size (FR: Limit 200KB)
-    target_size_kb = 200.0
+    # Check output size (FR: Limit 400KB)
+    target_size_kb = 400.0
     while os.path.getsize(output_path) > target_size_kb * 1024 and quality > 10:
         quality -= 5
         cv2.imwrite(output_path, transformed_img, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
